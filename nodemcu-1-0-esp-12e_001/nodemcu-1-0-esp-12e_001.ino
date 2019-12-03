@@ -5,10 +5,10 @@
 #include <SimpleTimer.h>
 #include <DHT.h>
 
-char auth[] = “pjgFEzrZ2-q1bCsfNxD2vwhwz4gaWLY6”;
+char auth[] = "pjgFEzrZ2-q1bCsfNxD2vwhwz4gaWLY6";
 
-char ssid[] = “NADTAWOOT 1”;
-char pass[] = “0640968245”;
+char ssid[] = "NADTAWOOT 1";
+char pass[] = "0640968245";
 
 #define DHTPIN 2
 
@@ -21,14 +21,14 @@ void sendSensor()
 {
 float h = dht.readHumidity();
 float t = dht.readTemperature();
-}
-if (isnan(h) || isnan(t)) {
-Serial.println(“Failed to read from DHT sensor!”);
+
+if (isnan(h) || isnan(t)) 
+Serial.println("Failed to read from DHT sensor!");
 return;
-}
 
 Blynk.virtualWrite(V5, h);
 Blynk.virtualWrite(V6, t);
+}
 
 void setup()
 {
